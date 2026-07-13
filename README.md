@@ -1,27 +1,76 @@
-# React + Vite
+# Event Organiser
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full-stack front-end React application for managing personal events. Users can register an account, log in, and create, view, and edit their upcoming events from a centralised dashboard.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **User Authentication** — Register a new account and log in.
+- **Protected Routes** — Dashboard, Events, and Help pages are only accessible to logged in users.
+- **Dashboard** — Personalised greeting and quick navigation to your events.
+- **Event Management** — Create, view, and edit events with a simple modal interface.
+- **Help / FAQ** — Built-in help page with frequently asked questions.
 
-## React Compiler
+## How to install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Clone the repository
+git clone https://github.com/f-camara/Event-Organiser.git
 
-## Expanding the Oxlint configuration
+# Navigate into the project directory
+cd Event-Organiser
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+# Install dependencies
+npm install
+```
 
-//////////////////////////////////////////////////////////////////////
+## Running the App
 
-npm install react-router-dom
-npm install react-hook-form
-npm install -D vitest
-npm install -D @testing-library/react
-npm install -D @testing-library/jest-dom
-npm install -D jsdom
+### Dev Server
 
-//////////////////////////////////////////////////////////////////////
+Start the server:
+
+```bash
+npm run dev
+```
+
+Open the URL printed in the terminal (default: `http://localhost:5173`).
+
+## Project Structure
+
+```
+Event-Organiser/
+├── index.html                  # Entry HTML file
+├── package.json                # Dependencies and scripts
+├── vite.config.js              # Vite configuration
+├── public/                     # Static assets
+│   ├── favicon.svg
+│   └── icons.svg
+└── src/
+    ├── main.jsx                # Application entry point
+    ├── index.css               # Global styles
+    ├── context/
+    │   └── userContext.jsx      # Authentication & event state (React Context)
+    ├── data/
+    │   └── faq.js              # FAQ data
+    └── components/
+        ├── App/                # Root component with routing
+        ├── Dashboard/          # User dashboard / landing page
+        ├── Events/             # Create, display, and edit events
+        ├── Footer/             # Footer component
+        ├── Help/               # Help / FAQ page
+        ├── Login/              # Login form
+        ├── Navigation/         # Sidebar navigation & top navbar
+        └── Registration/       # Registration form
+```
+
+## Usage
+
+1. **Register** — Visit the registration page and create a new account.
+2. **Log in** — Sign in with your credentials to access the app.
+3. **Dashboard** — After logging in you will see a personalised greeting.
+4. **Events** — Navigate to the Events page to create, view, or edit your events.
+5. **Help** — Visit the Help page for answers to common questions.
+
+## License
+
+This project is for educational purposes as part of a capstone project.
